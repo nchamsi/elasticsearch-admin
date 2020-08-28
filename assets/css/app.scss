@@ -1,8 +1,6 @@
 @import "~bootstrap/scss/bootstrap.scss";
 
-@import "~select2/dist/css/select2.min.css";
-
-@import "~@ttskch/select2-bootstrap4-theme/dist/select2-bootstrap4.min.css";
+@import "~choices.js/src/styles/choices.scss";
 
 #toast-container {
     position: fixed;
@@ -36,4 +34,50 @@ p .form-check .form-check-input {
 
 .bg-strongwarning {
     background-color: $orange !important;
+}
+
+.choices__inner {
+    appearance: none;
+    background-clip: padding-box;
+    background-color: #fff;
+    border: 1px solid #ced4da;
+    border-radius: 0.25rem;
+    color: #495057;
+    display: block;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    min-height: calc(1.5em + 0.75rem + 2px);
+    padding: 0 0.75rem;
+    width: 100%;
+}
+
+.choices__input {
+    background-color: transparent;
+}
+
+.choices__list--multiple .choices__item, .choices .choices__item .choices__item--selectable {
+    background-color: #ffffff;
+    border: 1px solid #bdc6d0;
+    border-radius: .2rem;
+    color: #343a40;
+    cursor: pointer;
+    float: left;
+    font-size: 14px;
+    margin-top: 0.6em;
+    margin-right: 5px;
+    padding: 0 5px 0 0;
+}
+
+.choices[data-type*='select-multiple'] .choices__button, .choices[data-type*='text'] .choices__button {
+    background-image: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjEiIGhlaWdodD0iMjEiIHZpZXdCb3g9IjAgMCAyMSAyMSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSIjRkZGIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxwYXRoIGQ9Ik0yLjU5Mi4wNDRsMTguMzY0IDE4LjM2NC0yLjU0OCAyLjU0OEwuMDQ0IDIuNTkyeiIvPjxwYXRoIGQ9Ik0wIDE4LjM2NEwxOC4zNjQgMGwyLjU0OCAyLjU0OEwyLjU0OCAyMC45MTJ6Ii8+PC9nPjwvc3ZnPg==);
+    background-size: 8px;
+    border-left: none;
+    color: #bdc6d0;
+    float: left;
+    font-weight: 700;
+    margin-left: 1px;
+    margin-right: 1px;
+    padding-right: 3px;
+    padding-left: 3px;
 }
