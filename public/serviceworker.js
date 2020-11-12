@@ -95,6 +95,19 @@ self.addEventListener('message', function(message) {
     }
 });
 
+self.addEventListener('pushsubscriptionchange', function(PushSubscriptionChangeEvent) {
+    fetch(self.registration.scope + '/pushsubscriptionchange', {
+        'method': 'post',
+        'body': JSON.stringify(PushSubscriptionChangeEvent)
+    });
+
+    self.registration.showNotification('pushsubscriptionchange', {
+        'data': {'url': self.registration.scope},
+        'tag': 'pushsubscriptionchange',
+        'body': 'pushsubscriptionchange'
+    });
+});
+
 self.addEventListener('push', function(PushEvent) {
     if('waitUntil' in PushEvent) {
         if(PushEvent.data) {
